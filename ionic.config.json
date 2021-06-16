@@ -1,0 +1,7 @@
+{
+    "name": "AvoidInfection",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }

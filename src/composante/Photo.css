@@ -1,0 +1,44 @@
+img {
+    width: 492px;
+    height: 326px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px #20201c;
+    margin: 10px 0 20px 0;
+}
+
+img:hover {
+    width: 492px;
+    height: 326px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px #20201c;
+    margin: 10px 0 20px 0;
+}
+
+.lesButtons{
+    display:flex;
+    justify-content: center
+}
+
+.chevron{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 40px 30px;
+    transform: scale(2,2)
+
+
+}
+
+.chevron:hover{
+    transform: scale(3,3)
+}
+
+@media (max-device-width:768px) {
+    img {
+        width: 100vw;
+        height: 300px;
+        border-radius: 15px;
+        box-shadow: 5px 5px 20px #20201c;
+        margin: 10px 0 20px 0;
+    }
+}

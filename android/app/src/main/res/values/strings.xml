@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AvoidInfection</string>
+    <string name="title_activity_main">AvoidInfection</string>
+    <string name="package_name">io.ionic.AvoidInfection</string>
+    <string name="custom_url_scheme">io.ionic.AvoidInfection</string>
+</resources>

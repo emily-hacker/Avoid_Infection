@@ -1,0 +1,148 @@
+import React, { useContext } from 'react'
+
+import './cas.css'
+
+const Cas = () => {
+    const language = useContext(LanguageContext);
+
+    const FRENCH = () => {
+        return (<div>
+            <h1>Situation au Québec</h1>
+            <h2>en date du 30 septembre 2020, 11 h</h2>
+            <h3>Total de cas confirmés</h3>
+            <p>(74 288)</p>
+            <h3>Total de cas négatifs</h3>
+            <p>(1 456 279)</p>
+            <h3>Total des hospitalisations</h3>
+            <p>(262)</p>
+            <h3>Total des décès</h3>
+            <p>(5 834)</p>
+        </div>);
+    }
+
+    const ENGLISH = () => {
+        return (<div>
+            <h1>Situation in Quebec</h1>
+            <h2>Last updated on september 30th 2020, 11h00 AM</h2>
+            <h3>Total Confirmed Cases:</h3>
+            <p>(74 288)</p>
+            <h3>Total Negative Cases:</h3>
+            <p>(1 456 279)</p>
+            <h3>Total of Hospitalisations</h3>
+            <p>(262)</p>
+            <h3>Total Deceased</h3>
+            <p>(5 834)</p>
+        </div>);
+    }
+
+    return (
+        <div className='texte'>
+            {language === 'FR' ? <FRENCH/> : <ENGLISH/>}
+        </div>
+    )
+}
+
+export default Cas
+
+
+
+
+
+-------------------------------------------------------------------
+
+<button className="bouts" onClick={imageHandler}>{protection}</button>
+            <button className="bouts" onClick={casHandler}>{etat}</button>
+            <button className="bouts" onClick={aboutHandler}>{info}</button>
+
+-------------------------------------------------------------------------------------------
+
+import React, { useState, useContext } from 'react'
+import a from '../photo/a.jpg'
+import b from '../photo/b.jpg'
+import c from '../photo/c.jpg'
+import d from '../photo/d.jpg'
+import e from '../photo/e.jpg'
+import './Photo.css'
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
+
+
+
+
+const Photo = () => {
+    const language = useContext(LanguageContext);
+    const listPhoto = [a, b, c, d, e]
+    const [compteur, setCompteur] = useState(0)
+    const droite = () => {
+        if (compteur === 4) {
+            setCompteur(0)
+
+        } else {
+            setCompteur(compteur + 1)
+        }
+    }
+    const gauche = () => {
+        if (compteur === 0) {
+            setCompteur(4)
+        } else {
+            setCompteur(compteur - 1)
+        }
+    }
+
+    return (
+        <div>
+            <div className='image'>
+                <img className='images' src={listPhoto[compteur]} alt='OOPS, not working!' />
+            </div>
+            <div className='lesButtons'>
+                <FaChevronLeft className='chevron' onClick={gauche} />
+                <FaChevronRight className='chevron' onClick={droite} />
+            </div>
+        </div>
+
+    )
+}
+
+export default Photo
+
+----------------------------------------------------------------------------------------------------
+
+import React, { useContext } from 'react'
+
+
+const About = () => {
+    const language = useContext(LanguageContext);
+
+    return (
+        <div>
+            <h1>About</h1>
+            <h3>app version</h3>
+            <p>1.0</p>
+            <h3>Fouder</h3>
+            <p>I am a 10 years old coder and i developed this app as a contribution to the global effort for fighting covid 19 pandemic.</p>
+            <h3>programming language</h3>
+            <p>javascript react</p>
+        </div>
+    )
+}
+
+export default About
+
+----------------------------------------------------------------------------------------
+
+const [french, setFrench] = useState(false)
+
+  const [english, setEnglish] = useState(false)
+
+  const [protection, setProtection] = useState(false)
+  const [etat, setEtat] = useState(false)
+  const [info, setInfo] = useState(false)
+
+  const [image, setImage] = useState(true)
+
+  const [about, setAbout] = useState(false)
+
+  const [cas, setCas] = useState(false)
+
+-----------------------------------------------------
+
+{ useState }
